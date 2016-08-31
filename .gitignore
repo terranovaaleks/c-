@@ -3,6 +3,10 @@
 *.exe
 *.out
 
+#Other
+.py
+.pl
+
 # Emacs
 *~
 
@@ -23,7 +27,6 @@
 # *.ps
 # *.eps
 # *.pdf
-
 
 
 # WinEdt
