@@ -3,7 +3,9 @@
 The assignments are to be solved individually. Do not edit any files in this folder. Make your changes in the corresponding subdirectories 01, 02 etc
 Every assignment requires an oral presentation where you shall be able to explain and answer questions regarding your solutions.
 
-Before the oral presentation there are questions that shall be answered in writing before the oral presentation. Fill out the questions/answer file Q_A_01.md in the subdirectory.
+If an assignment requires one or several written answers, a file named
+inquery.md will be available in the
+corresponding _lab directory_. Use the file as a template for submitting your answers. The file format is [markdown](https://en.wikipedia.org/wiki/Markdown) a tutorial on markdown can be found [here](http://www.markdowntutorial.com/). 
 
 ## General Requirements
 
@@ -51,6 +53,10 @@ point it to \url{https://kth.kattis.com}, then;
 *  make sure that you register as a student taking cprog16, before you try to
     submit any of your solutions.
 
+
+## Git
+
+The course uses git version control system. Do not make any changes in this root directory. Do your changes in the subdirectories 01, 02, 03 etc. Learn to use git status, git add, git push and git pull. There are several tutorials on git, one of them for linux users is [here](http://www.tutorialspoint.com/git/git_quick_guide.htm)
 
 
 
