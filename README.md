@@ -3,7 +3,7 @@
 The assignments are to be solved individually. Do not edit any files in this folder. Make your changes in the corresponding subdirectories 01, 02 etc
 Every assignment requires an oral presentation where you shall be able to explain and answer questions regarding your solutions.
 
-Before the oral presentation there are questions that shall be answered in writing before the oral presentation. Fill out the questions/answer file Q_A_01.md, 
+Before the oral presentation there are questions that shall be answered in writing before the oral presentation. Fill out the questions/answer file Q_A_01.md in the subdirectory.
 
 ## General Requirements
 
