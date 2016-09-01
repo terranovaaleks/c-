@@ -25,8 +25,28 @@ invoke _g++ in the manner stated below:
 
 
 ```
-> cp /info/DD2387/labs/lab1/0.1_make_it_happen/hello_world.cpp .
+> cd 01
 > g++ -o say_hello.out hello_world.cpp 
 > ./say_hello.out
 ```
+where we first copy the source code, compile it and then run it. 
+
+If there are any problems during compilation, such as trying to
+compile an ill-formed program, _g++_ will print diagnostics related to
+such, and no executable will be created.
+
+## make
+
+For larger projects it is recommended to use a build system. One such system is
+called _make_ which is what we will use throughout this
+course.
+
+_make_ will read the contents of a file named _makefile_ in the
+current working directory. This file contains rules specifying
+how to build parts of your project, or simply put; how to produce an executable.
+
+Look at 
+There is a file named _makefile1_ make a copy of it in the current working directory and look at its contents by
+invoking _more makefile_.
+
 
