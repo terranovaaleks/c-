@@ -2,7 +2,9 @@
 
 This section will focus on the basics of compiling source code. Please use the
 literature associated with this course, as well as resources online to acquire
-further information about the topics discussed.
+further information about the topics discussed. 
+
+Pull code from your assigned git repository.
 
 ## How do I compile my implementation?
 
