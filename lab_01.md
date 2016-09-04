@@ -4,7 +4,12 @@ This section will focus on the basics of compiling source code. Please use the
 literature associated with this course, as well as resources online to acquire
 further information about the topics discussed.
 
-Pull code from your assigned git repository. Do not edit any files in the root directory. Change working directory to _01_ and do all your work for this assignment there.
+If you are not familiar with git do read a git tutorial. There are plenty of 
+
+
+
+Pull code from your assigned git repository
+_git clone YOURKTH@kth.se:/cprog16/YOURKTH-labbar_. Do not edit any files in the root directory. Change working directory to _01_ and do all your work for this assignment there.
 
 ```
 > cd 01
@@ -84,16 +89,33 @@ hello\_world_.
 ####   What is the difference between an object file, and an executable?
 
 There is a another makefile _makefile2_ with contents
-that differ from the one viewed in the previous subsection. Overwrite the current _makefile_ (there is a backup copy of it named _makefile1_) with _makefile2_
+that differ from the one viewed in the previous subsection. Overwrite the current _makefile_
+
 ```
 > cp makefile2 makefile
+```
+
+Check the git status
+
+```
+> git status
+Ändringar ej i incheckningskön:
+(använd "git add <fil>..." för att uppdatera vad som skall checkas in)
+(använd "git checkout -- <fil>..." för att förkasta ändringar i arbetskatalogen)
+
+      ändrad:        makefile
 ```
 
 Commit the new version of the _makefile_ to git. First you need to add it to the commit queue before commiting.
 
 ```
-> git status
+> git add makefile
+> git commit makefile -m "changed makefile"
+[master 3a939d5] changed makefile
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+```
 
+Look at the content of _makefile_ by invoking _more makefile_
 
 ```
 > more makefile
@@ -112,3 +134,13 @@ clean:
 	rm -f *.o *.out
 
 ```
+
+The old version of the makefile can be viewed with _git show_
+
+```
+git show HEAD~:01/makefile
+%.out: %.cpp
+       g++ -std=c++0x -g -Wall $*.cpp -o $*.out
+```
+
+#### Questions
