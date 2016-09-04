@@ -306,6 +306,7 @@ _std::cout_, whereas potential error diagnostics (detected by
 _parse_args_) shall be printed through _std::cerr_.
 
 
+
 ### Hints
 
 * The argument named _argc_ to _main_ will contain the number of
@@ -319,7 +320,6 @@ arguments passed to your application.
 _char const *_ to an integer. If the function is unable to interpret
 the data as an integer, it will return _0_.
 
-### Testing your program
 
 
 
@@ -328,4 +328,40 @@ the data as an integer, it will return _0_.
 #### What is the purpose of _std::cout_, _std::cerr_, and
 _std::clog_, respectively?
 
-####
+#### How does #include work?
+
+## Train Spotting (debugging)
+
+There is a source file named _weird.cpp_. Read through its source code and try
+to reason about the runtime behavior of the program without running it.
+
+
+```
+int powerof (int x, int y) {
+  int res = 1;
+
+  for (int i = 0; i < y; ++i);
+    res *= x;
+
+  return res;
+}
+
+int main () {
+  int const a = 2;
+  int const b = 4;
+
+  int   x = powerof(a, b);
+  float y = 3.1415;
+
+  std::cout << a << "^" << b << " = " << x << ";\n";
+
+  if (y == 3.1415)
+    std::cout << y << " is equal to 3.1415!\n";
+  else
+    std::cout << y << " is not equal to 3.1415!\n";
+}
+```
+
+Compile and execute the program. Hopefully you notice how the behavior differs
+from what one might expect. Your task is to figure out why that is with the
+help of a debugger.
