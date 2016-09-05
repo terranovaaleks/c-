@@ -22,9 +22,6 @@ public:
      std::cout << "the assignment operator" << std::endl;
      return *this;
    }
-
-private:
-   double re;
 };
 
 void no_ref(Complex a) {}
