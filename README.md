@@ -1,11 +1,19 @@
 # DD1387 Programsystemkonstruktion med C++
 
-The assignments are to be solved individually. Do not edit any files in this folder. Make your changes in the corresponding subdirectories 01, 02 etc
-Every assignment requires an oral presentation where you shall be able to explain and answer questions regarding your solutions.
+The assignments are to be solved individually. Make your changes in the for each
+assignment corresponding subdirectories 01, 02 etc.
+Every assignment requires an oral presentation where you shall be able to explain
+and answer questions regarding your solutions.
 
 If an assignment requires one or several written answers, a file named
 inquiry.md will be available in the
-corresponding _lab directory_. Use the file as a template for submitting your answers. The file format is [markdown](https://en.wikipedia.org/wiki/Markdown) a tutorial on markdown can be found [here](http://www.markdowntutorial.com/).
+corresponding _lab directory_ (01, 02, 03 etc). Use the file as a template for
+submitting your answers. The file format is [markdown](https://en.wikipedia.org/wiki/Markdown).
+A tutorial on markdown can be found [here](http://www.markdowntutorial.com/).
+
+Your implementations is your means to prove that you fully understand important
+C++ concepts such as references, virtual, pointers, const, template programming, memory
+management which are taught during the course.  
 
 ## General Requirements
 
@@ -18,12 +26,14 @@ for your variables.
 * Your implementations must not leak memory, or any other acquired resource.
 Pay attention to the purpose of constructors, and their relationship with the corresponding destructor: Resource Acquisition Is Initialization
 
-* Your implementations should demonstrate that you fully understand the semantics associated with the keyword const
+* Your implementations should demonstrate that you fully understand the semantics
+associated with the keyword const
 
 * Questions that require a written answer should be answered in an elaborate manner; single word answers will not be accepted. Each answer must consist of
 at least one (1) full sentence.
 
 * You are responsible for testing your lab assignments! Submit your test suites in git. Untested code may fail examination.
+
 
 ## Receipt
 
