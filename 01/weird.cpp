@@ -27,7 +27,9 @@ int main () {
 
   adding_a_decimal(0.1);
 
-  float y = 3.1415;
+  float y;
+  std::cout << "What is the value of PI? ";
+  std::cin >> y;
   if (y == 3.1415)
     std::cout << y << " is equal to 3.1415!\n";
   else

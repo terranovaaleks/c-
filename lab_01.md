@@ -288,17 +288,17 @@ with what to print, and how many times to print it.
 as the second value of the returned _std::pair_, as well as printing
 a suitable error message on _stderr_.
 
-* You shall implement a function named _hello_ in a separate
+*    You shall implement a function named _hello_ in a separate
 _translation unit_ named _hello.cpp_ (i.e. the same file that
 shall contain the implementation of _parse_args_).
 
-_hello_ is responsible for printing the _hello world_-string on
+    _hello_ is responsible for printing the _hello world_-string on
 _stdout_ with the following semantics;
 
-**     If the value _zero_ is passed as the second parameter,
+    *     If the value _zero_ is passed as the second parameter,
     nothing shall be printed.
 
-** If a value greater than _zero_ is passed as the second argument
+    * If a value greater than _zero_ is passed as the second argument
 (_count_), _"Hello, "_ shall be printed followed by
 _count_ space-delimited occurrences of the first argument.
 The output shall end with an exclamation mark, followed by a new-line.
@@ -307,7 +307,7 @@ The output shall end with an exclamation mark, followed by a new-line.
 
 * Correct output from your program shall be printed through
 _std::cout_, whereas potential error diagnostics (detected by
-_parse_args_) shall be printed through _std::cerr_.
+_parse\_args_) shall be printed through _std::cerr_.
 
 * Your implementation, _hello.cpp_, shall be uploaded to, and approved by, _Kattis_.
 
@@ -370,7 +370,9 @@ int main () {
 
   adding_a_decimal(0.1);
 
-  float y = 3.1415;
+  float y;
+  std::cout << "What is the value of PI? ";
+  std::cin >> y;
   if (y == 3.1415)
     std::cout << y << " is equal to 3.1415!\n";
   else
@@ -378,7 +380,14 @@ int main () {
 }
 ```
 
-Compile and execute the program. Hopefully you notice how the behavior differs
+Compile and execute the program.
+
+```
+> g++ -std=c++11 -g -Wall -pedantic weird.cpp -o weird.out
+> echo '3.1415' | ./weird.out
+```
+
+Hopefully you notice how the behavior differs
 from what one might expect. Your task is to figure out why that is with the
 help of a debugger.
 
@@ -398,6 +407,8 @@ one might have anticipated.
 #### Why does not _powerof_ return the expected value (_16_), when invoked with _2_ and _4_?
 
 #### Why does not _adding_a_decimal_ output 100000?
+
+#### Describe how _weird.out_ is invoked by _echo '3.1415' | ./weird.out_  
 
 #### Why does not _y_ compare equal to _3.1415_?
 
