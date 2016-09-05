@@ -1,46 +1,49 @@
 #include <iostream>
 
-class A {
+class Complex {
 public:
-   A () {
+   Complex () {
      std::cout << "default-constructor" << std::endl;
    }
 
-   A (A const& src) {
+   Complex (Complex const& src) {
      std::cout << "copy-constructor" << std::endl;
    }
 
-  ~A () {
+  ~Complex () {
     std::cout << "destructor" << std::endl;
   }
 
-   A(char const* s) {
+   Complex(char const* s) {
       std::cout << "some other constructor" << std::endl;
    }
 
-   A& operator= (A const& src) {
+   Complex& operator= (Complex const& src) {
      std::cout << "the assignment operator" << std::endl;
      return *this;
    }
+
+private:
+   double re;
 };
 
-void no_ref(A a) {}
-void with_ref(const A & a) {}
+void no_ref(Complex a) {}
+void with_ref(const Complex & a) {}
 
 int main()
 {
-    A a("my name is a");
+    Complex a("3_2i");
 
-    A b = a;          // what is the difference
-    A c(a);           // between these three
-    A d;              // forms of initialization?
+    Complex b = a;          // what is the difference
+    Complex c(a);           // between these three
+    Complex d;              // forms of initialization?
 
     d = a;
 
-      no_ref (a);     // will this copy the value of `a`?
+    no_ref (a);       // will this copy the value of `a`?
     with_ref (a);     // will this copy the value of `a`?
 
-    A *aa = new A[5];
+    Complex *aa = new Complex[5];
     delete aa;        // what will happen?
     return 0;
 }

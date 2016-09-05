@@ -399,7 +399,10 @@ one might have anticipated.
 
 #### Is there any difference in behavior if we compare _y_ to _3.1415f_, if so; why?
 
-## Does It Fit? (unit testing)
+#### Describe and motivate the recommended method to use when trying to determine if two floating-point values are equal.
+
+
+## unit testing
 
 There is a file named _count_if_followed_by.cpp_
 
@@ -425,3 +428,143 @@ int count_if_followed_by (char const * p, int len, char a, char b) {
   return count;
 }
 ```
+
+### _cxxtest_ a unit test framework
+
+A unit test framework, such as _cxxtest_, allows a developer to specify
+constraints, and the expected behavior, of an implementation that he/she would
+like to test.
+
+These rules are later used to generate _unit tests_. These unit
+tests will test to see that an implementation behaves as it shall (according to
+the previously stated specification).
+
+The steps associated with using a unit test framework for C++ typically
+includes the following:
+
+* Specify the constraints and requirements that you would like to test.
+
+* Ask the unit test framework to generate a _test runner_ having
+semantics associated with your specifications.
+
+* Compile the _test runner_ into an executable.
+
+* Invoke the executable to commence testing.
+
+### Generating a _test runner_
+
+There is a file named _simple.cxxtest.cpp_
+
+Asking _cxxtest_ to generate a _test runner_ from the contents of this
+file can be accomplished through the following:
+
+```
+> /info/DD2387/labs/cxxtest/cxxtestgen.py --error-printer -o simple_testrunner.cpp simple.cxxtest.cpp
+```
+
+Before we can execute our _test runner_, the _test runner_ itself must
+be compiled it into an executable. This includes linking it together with an
+object file that contains our implementation.
+
+Create an object file of our implementation:
+
+```
+> g++ -c -o count_if_followed_by.o count_if_followed_by.cpp
+```
+
+Compile our _test runner_, and link it with the object file:
+
+```
+> g++ -o simple_test.out -I /info/DD2387/labs/cxxtest/ \
+  simple_testrunner.cpp count_if_followed_by.o
+```
+
+The test can be run by invoking _./simple_test.out_.
+
+### Writing a test using _cxxtest_
+
+*Note_: You may simplify the task of generating, and compiling,
+test runners by writing a new rule inside your _makefile*
+
+There is an intentional bug in the definition of
+_count_if_followed_by_; it will potentially access one element outside
+the range specified.  Collectively, bugs of this sort is most often referred to
+as "_off-by-one errors_".
+
+```C++
+// expected: result == 0
+//  outcome: result == 1 (!!!)
+
+char const data[4] = {'G','G','X','G'};
+int  const result  = count_if_followed_by (data, 3, 'X', 'G');
+```
+
+### Requirements
+
+* Implement three (3) different tests that test the correct, and incorrect,
+behavior of _count_if_followed_by_. The tests shall be presented
+during your oral presentation, so make sure that you have them available
+when it is time for such.
+
+#### unit test questions
+
+#### Why is it important to test the boundary conditions of an implementation, especially in the case of _count_if_followed_by_?
+
+#### Describe how the testcase tests if a pointer is accessing an element outside the range specified
+
+
+## Will It Float? (temporaries, resource management, valgrind)
+
+There is a source file named _complex.cpp_. It is recommended to use a debugger,
+or to add print-statements in the
+source code, to make it easier to reason about its runtime behavior.
+
+#### class construction questions
+
+#### What constructors are invoked, and when? List the corresponding lines and name the invoked constructor
+
+#### Will there be any temporaries created, if so; when?
+
+#### What will happen if we try to free a dynamically allocated array through _delete p_, instead of _delete [] p_?
+
+
+## _valgrind_ a memory management analyzer
+
+Compile _complex.cpp_ and run valgrind on the executable
+
+```
+> g++ -pedantic -Wall -std=c++11 -g complex.cpp -o complex.out
+> valgrind --tool=memcheck --leak-check=yes ./complex.out
+```
+#### valgrind
+
+#### _valgrind_ indicates that there is something wrong with _complex.cpp_; what, and why?
+
+There is source file named _bad_plumming.cpp_,
+copy and compile this program, then run _valgrind_ to analyze the
+correctness and behavior.
+
+#### _valgrind_ indicates that the program suffers from a few problems, which and why?
+
+#### If you comment out the entire if-block in _foo_, is there any difference in how much memory that is leaked?
+
+Revert _bad_plumming.cpp_ to its original state, then only comment
+out the line that contains the if-condition.
+
+```C++
+    for (int i = 0; i < x; i++)
+        // if (v[i] != 0)
+            v[i] = new Data;
+```
+
+Change the last line of _main_ to the below.
+
+```C++
+    Data ** p = foo(v, size);
+    delete [] p;
+```
+
+
+#### Why is it that valgrind still issue diagnostics related to memory management?
+
+#### Add code that fixes the memory management
