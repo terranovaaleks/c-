@@ -5,9 +5,8 @@ literature associated with this course, as well as resources online to acquire
 further information about the topics discussed.
 
 
-If you are not familiar with git you may need to read up on git. There is KTH-specific guide (in swedish [here](https://www.kth.se/social/files/55f1b20ef276547bf8af78fc/git_draft.pdf). There are plenty of other resources on the internet on git, some can be found <a [https://help.github.com/articles/good-resources-for-learning-git-and-github/](here)
+If you are not familiar with git you may need to read up on git. There is KTH-specific guide (in swedish [here](https://www.kth.se/social/files/55f1b20ef276547bf8af78fc/git_draft.pdf). There are plenty of other resources on the internet on git, some can be found [here](https://help.github.com/articles/good-resources-for-learning-git-and-github/)
 
-https://gits-14.sys.kth.se/
 If you have not done so already, [follow these steps to generate ssh-keys](https://help.github.com/articles/generating-an-ssh-key/) but use _gits-15.sys.kth.se_ instead of _github.com_ and perhaps do use ordinary copy/paste instead of _clip < ~/.ssh/id_rsa.pub_
 
 Pull code from your assigned git repository. If you have generated ssh-keys you should be able to run something similar to this on your command line:
@@ -53,7 +52,7 @@ If there are any problems during compilation, such as trying to
 compile an ill-formed program, _g++_ will print diagnostics related to
 such, and no executable will be created.
 
-## make and git
+## building with make
 
 For larger projects it is recommended to use a build system. One such system is
 called _make_ which is what we will use throughout this
@@ -63,7 +62,6 @@ _make_ will read the contents of a file named _makefile_ in the
 current working directory. This file contains rules specifying
 how to build parts of your project, or simply put; how to produce an executable.
 
-Look at
 There is a _makefile_ in _01_ look at its contents by invoking _more makefile_.
 
 ```
@@ -103,6 +101,7 @@ that differ from the one viewed in the previous subsection. Overwrite the curren
 ```
 > cp makefile2 makefile
 ```
+### using git
 
 Check the git status
 
@@ -193,14 +192,14 @@ modified).
 Change the modification timestamp of _main.cpp_ by invoking _touch_.
 
 ```
-    > touch main.cpp
+> touch main.cpp
 ```
 
 Now invoke _make_, and notice that _hello.cpp_ will not be recompiled.
 
 ```
-    > make
-    g++ -std=c++11 -g -Wall -pedantic main.cpp hello.o -o main.out
+> make
+g++ -std=c++11 -g -Wall -pedantic main.cpp hello.o -o main.out
 ```
 
 #### makefile questions
@@ -221,7 +220,7 @@ There is an alternative compiler (_clang_) installed on the ubuntu
 systems. To switch from using _gcc_ to _clang_, modify the
 _makefile_ and uncomment the following line (by removing _\#_).
 
-```C++
+```
 #CC   = clang++-3.6 -L /usr/lib/gcc/x86_64-linux-gnu/4.8 -I /usr/include/x86_64-linux-gnu/c++/4.8 -I /usr/include/c++/4.8
 ```
 
@@ -229,9 +228,9 @@ Using a different compiler can often allow you to view potential errors from a
 different angle (mostly because different compilers present errors in different
 ways), making it easier to realize what went wrong, and more importantly; why.
 
-Build and run the program using _clang_.
+Build and run the program using _clang_ instead of _g++_.
 
-## Assignment an improved (hello) world
+## Assignment an improved world of hello
 
 _hello, world_ is a classic program that dates back to 1974, first published
 in a paper titled _Programming in C: A tutorial_. The program has one
@@ -305,6 +304,7 @@ The output shall end with an exclamation mark, followed by a new-line.
 _std::cout_, whereas potential error diagnostics (detected by
 _parse_args_) shall be printed through _std::cerr_.
 
+* Your implementation, _hello.cpp_, shall be uploaded to, and approved by, _Kattis_.
 
 
 ### Hints
@@ -325,8 +325,7 @@ the data as an integer, it will return _0_.
 
 #### Hello world questions
 
-#### What is the purpose of _std::cout_, _std::cerr_, and
-_std::clog_, respectively?
+#### What is the purpose of _std::cout_, _std::cerr_, and _std::clog_, respectively?
 
 #### How does #include work?
 

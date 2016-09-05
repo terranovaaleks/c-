@@ -5,7 +5,7 @@ Every assignment requires an oral presentation where you shall be able to explai
 
 If an assignment requires one or several written answers, a file named
 inquery.md will be available in the
-corresponding _lab directory_. Use the file as a template for submitting your answers. The file format is [markdown](https://en.wikipedia.org/wiki/Markdown) a tutorial on markdown can be found [here](http://www.markdowntutorial.com/). 
+corresponding _lab directory_. Use the file as a template for submitting your answers. The file format is [markdown](https://en.wikipedia.org/wiki/Markdown) a tutorial on markdown can be found [here](http://www.markdowntutorial.com/).
 
 ## General Requirements
 
@@ -32,7 +32,7 @@ at least one (1) full sentence.
 * Remember to ask for a signature after each oral presentation associated with a particular lab.
 
 * All results are reported to [rapp](http://rapp.csc.kth.se), and you are
-    advised to check so that your results have been reported correctly. If results 
+    advised to check so that your results have been reported correctly. If results
     are missing in rapp you must contact the course leader and
     present your signed report receipt.
 
@@ -43,13 +43,13 @@ verify that your implementation is correct in relation to the requirements set
 forth by the assignment in question.
 
 To submit an implementation for automatic testing, open up a web browser and
-point it to \url{https://kth.kattis.com}, then;
+point it to [kth.kattis.com](https://kth.kattis.com), then;
 
 
 *  authenticate using your KTH-id, if this is the first time you are using
     _Kattis_ you must register for the service after signing in, also;
 
-  
+
 *  make sure that you register as a student taking cprog16, before you try to
     submit any of your solutions.
 
@@ -57,7 +57,3 @@ point it to \url{https://kth.kattis.com}, then;
 ## Git
 
 The course uses git version control system. Do not make any changes in this root directory. Do your changes in the subdirectories 01, 02, 03 etc. Learn to use git status, git add, git push and git pull. There are several tutorials on git, one of them for linux users is [here](http://www.tutorialspoint.com/git/git_quick_guide.htm)
-
-
-
-
