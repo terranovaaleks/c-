@@ -14,7 +14,7 @@ Pull code from your assigned git repository. If you have generated ssh-keys you 
 git clone git@gits-15.sys.kth.se:cprog16/YOURKTHLOGIN-labbar.git
 ```
 
-Change your working directory to the root of your cloned git repository. Do not edit any files in the root directory. Change working directory to _01_ and do all your work for this assignment in _01_.
+Change your working directory to the root of your cloned git repository. Do not edit any files in the root directory. Change working directory once more to _01_ and do all your work for this assignment in _01_.
 
 ```
 > cd path/to/cloned-repository
@@ -123,6 +123,8 @@ Commit the new version of the _makefile_ to git. First you need to add it to the
  1 file changed, 13 insertions(+), 2 deletions(-)
 ```
 
+*Note: You can edit and commit files directly in the web interface as well but then you need to synchronize your local repository*
+
 Look at the content of _makefile_ by invoking _more makefile_
 
 ```
@@ -163,7 +165,10 @@ git show HEAD~:01/makefile
 
 #### Why can you not ommit _01_ in the previous commands (i.e. _git show HEAD~:makefile_ instead of  _git show HEAD~:01/makefile_)
 
+#### Sometimes you may need to do a _git pull_ before you can do a _git push_ how can that be?
+
 #### What is the purpose of the .git_ignore file and why should \*.o \*.out \*.exe be in this file when developing C++?
+
 
 ## How _make_ works
 
