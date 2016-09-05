@@ -29,7 +29,7 @@ This course will use _g++_ to compile source code into object files, as
 well as linking them to produce a final executable. The current recommended, and
 used, version is _4.8.4_
 
-There is a file named [hello_world.cpp](01/hello_world.cpp) in _01_
+There is a file named [hello_world.cpp](01/hello_world.cpp) in the current directory (_01_)
 
 ```C++
 > cat hello_world.cpp
