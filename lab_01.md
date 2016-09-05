@@ -589,4 +589,4 @@ Change the last line of _main_ to the below.
 Write your answers to the questions above in inquiry.md do copy relevant code
 to your answers so that both questions and answers are in context.
 
-*Good luck*
+### Good luck
