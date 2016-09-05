@@ -446,9 +446,9 @@ int count_if_followed_by (char const * p, int len, char a, char b) {
 
 ### _cxxtest_ a unit test framework
 
-A unit test framework, such as _cxxtest_, allows a developer to specify
-constraints, and the expected behavior, of an implementation that he/she would
-like to test.
+A unit test framework, such as (_cxxtest_)[http://cxxtest.com/], allows a
+developer to specify constraints, and the expected behavior, of an
+implementation that he/she would like to test.
 
 These rules are later used to generate _unit tests_. These unit
 tests will test to see that an implementation behaves as it shall (according to
@@ -583,3 +583,10 @@ Change the last line of _main_ to the below.
 #### Why is it that valgrind still issue diagnostics related to memory management?
 
 #### Add code that fixes the memory management
+
+## Oral and offline review
+
+Write your answers to the questions above in inquiry.md do copy relevant code
+to your answers so that both questions and answers are in context.
+
+*Good luck*
