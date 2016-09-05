@@ -336,14 +336,25 @@ There is a source file named _weird.cpp_. Read through its source code and try
 to reason about the runtime behavior of the program without running it.
 
 
-```
+```C++
+#include <iostream>
+#include <iomanip>
+
 int powerof (int x, int y) {
   int res = 1;
 
   for (int i = 0; i < y; ++i);
-    res *= x;
+    res = res * x;
 
   return res;
+}
+
+void adding_a_decimal(float step) {
+  float sum = step;
+  for (int i = 0; i < 1000*1000; ++i) {
+    sum += step;
+  }
+  std::cout << std::setw(4) << sum << std::endl;
 }
 
 int main () {
@@ -351,10 +362,11 @@ int main () {
   int const b = 4;
 
   int   x = powerof(a, b);
-  float y = 3.1415;
-
   std::cout << a << "^" << b << " = " << x << ";\n";
 
+  adding_a_decimal(0.1);
+
+  float y = 3.1415;
   if (y == 3.1415)
     std::cout << y << " is equal to 3.1415!\n";
   else
@@ -365,3 +377,51 @@ int main () {
 Compile and execute the program. Hopefully you notice how the behavior differs
 from what one might expect. Your task is to figure out why that is with the
 help of a debugger.
+
+### Using a debugger
+
+The accompanying debugger for gcc is called _gdb_. It uses a
+command line interface.  There is a graphical user interface to gdb
+called _ddd_ on the lab computers. If you use your own computer
+there may be other debuggers available (lldb, visual studio, eclipse
+etc). Feel free to google and install an alternative C++ debugger.
+
+Use the debugger of your choice to identify why the program does not behave as
+one might have anticipated.
+
+#### debugging questions
+
+#### Why does not _powerof_ return the expected value (_16_), when invoked with _2_ and _4_?
+
+#### Why does not _adding_a_decimal_ output 100000?
+
+#### Why does not _y_ compare equal to _3.1415_?
+
+#### Is there any difference in behavior if we compare _y_ to _3.1415f_, if so; why?
+
+## Does It Fit? (unit testing)
+
+There is a file named _count_if_followed_by.cpp_
+
+```
+// .-------------------------------------------------------
+// |        count_if_followed_by (data, len, a, b);
+// |
+// | About: Returns the number of occurances of
+// |        a followed by b in the range [data, data+len).
+// '-------------------------------------------------------
+
+int count_if_followed_by (char const * p, int len, char a, char b) {
+  int        count = 0;
+  char const * end = p + len;
+
+  while (p != end) {
+    if (*p == a && *(p+1) == b)
+      count += 1;
+
+    ++p;
+  }
+
+  return count;
+}
+```
