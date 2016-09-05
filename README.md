@@ -66,3 +66,5 @@ You need, at minimum, to use _git status, git add, git commit, git push and git 
 If you have not done so already, [follow these steps to generate ssh-keys](https://help.github.com/articles/generating-an-ssh-key/) but use _gits-15.sys.kth.se_ instead of _github.com_ and perhaps do use ordinary copy/paste instead of _clip < ~/.ssh/id_rsa.pub_
 
 Do not make any changes in the root directory. Do your changes in the subdirectories 01, 02, 03 etc. New material will be pushed to your repository during the course and you will need use _git pull_ to synchronize your local repository. Material will only be pushed to the root directory which, if untouched, will synchronize without conflicts.
+
+### Good luck
