@@ -23,7 +23,7 @@ Pay attention to the purpose of constructors, and their relationship with the co
 * Questions that require a written answer should be answered in an elaborate manner; single word answers will not be accepted. Each answer must consist of
 at least one (1) full sentence.
 
-* You are responsible for testing your lab assignments! Submit your test suites in git.
+* You are responsible for testing your lab assignments! Submit your test suites in git. Untested code may fail examination.
 
 ## Receipt
 
@@ -58,9 +58,11 @@ point it to [kth.kattis.com](https://kth.kattis.com), then;
 
 ## Git
 
-The course uses git version control system. Do not make any changes in this root directory. Do your changes in the subdirectories 01, 02, 03 etc. You need, at minimum, to use git status, git add, git commit, git push and git pull.
-
 If you are not familiar with git you may need to read up on git. There is KTH-specific guide (in swedish [here](https://www.kth.se/social/files/55f1b20ef276547bf8af78fc/git_draft.pdf). There are plenty of other resources on the internet on git, some can be found [here](https://help.github.com/articles/good-resources-for-learning-git-and-github/)
 A tutorial for linux users is [here](http://www.tutorialspoint.com/git/git_quick_guide.htm)
 
+You need, at minimum, to use _git status, git add, git commit, git push and git pull_.
+
 If you have not done so already, [follow these steps to generate ssh-keys](https://help.github.com/articles/generating-an-ssh-key/) but use _gits-15.sys.kth.se_ instead of _github.com_ and perhaps do use ordinary copy/paste instead of _clip < ~/.ssh/id_rsa.pub_
+
+Do not make any changes in the root directory. Do your changes in the subdirectories 01, 02, 03 etc. New material will be pushed to your repository during the course and you will need use _git pull_ to synchronize your local repository. Material will only be pushed to the root directory which, if untouched, will synchronize without conflicts.
