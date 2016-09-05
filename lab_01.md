@@ -587,6 +587,7 @@ Change the last line of _main_ to the below.
 ## Oral and offline review
 
 Write your answers to the questions above in inquiry.md do copy relevant code
-to your answers so that both questions and answers are in context.
+to your answers so that both questions and answers are in context. Do not forget
+to push _inquiry.md_ after answering a question.
 
 ### Good luck

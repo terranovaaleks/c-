@@ -1,6 +1,7 @@
 ## Lab 1 answers
 
 The file format is [markdown](https://en.wikipedia.org/wiki/Markdown) a tutorial on markdown can be found [here](http://www.markdowntutorial.com/). Write your answers here. Copy relevant code to put questions and answers in context.
+Commit and push _inquiry.md_ each day you work with the file.
 
 #### g++ compiler questions
 
@@ -98,4 +99,3 @@ _TODO: your answer here_
 #### Why is it that valgrind still issue diagnostics related to memory management?
 
 #### Add code that fixes the memory management
-
