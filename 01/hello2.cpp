@@ -20,7 +20,7 @@ std::pair<const char *, int> parse_args (int argc, char * argv[]){
         std::cerr << "du e zigenare?" << std::endl;
         return std::make_pair(NULL, -1); // om inga argument har skickats med
     else if (argc == 2)
-        return std::make_pair( argv[1])
+        return std::make_pair( argv[1] , 0 )
     else if (argc == 3)
         if (std::atol(argv[2]))   // atol returnerar 0 om det inte går att göra om till en long int
             return std::make_pair(argv[1], std::atol (argv[2]))
