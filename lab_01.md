@@ -213,18 +213,28 @@ git show HEAD~:01/makefile
 
 #### What does _git show HEAD~:01/makefile_ show?
 
+HEAD points to the latest commit. HEAD~ points to the parent commit of what HEAD points to i.e
+the previous commit. _git show HEAD~:01/makefile_ the what was added/removed by the parent commit of HEAD.
+
 #### What does _git show HEAD:01/makefile_ show?
+ _git show HEAD:01/makefile_ the shows what was added/removed by the latest commit pointed by HEAD.
 
 #### What would _git show HEAD~~:01/makefile_ show?
+ _git show HEAD:01/makefile_ the shows what was added/removed by the latest commit pointed by HEAD.
 
 #### What does the _~_ in the previous _git show_ commands mean?
+
+previous
 
 #### Why can you not ommit _01_ in the previous commands (i.e. _git show HEAD~:makefile_ instead of  _git show HEAD~:01/makefile_)
 
 #### Sometimes you may need to do a _git pull_ before you can do a _git push_ how can that be?
 
+Someone pushed commits to origin (or the upstream of the branch ) which needs to be synchronized with the local repository.
+
 #### What is the purpose of the .git_ignore file and why should \*.o \*.out \*.exe be in this file when developing C++?
 
+We do not want those files to be known by git. Its useless information to a revision system.
 
 ## How _make_ works
 
