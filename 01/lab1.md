@@ -80,7 +80,39 @@ What is the purpose of the .git_ignore file and why should *.o *.out *.exe be in
 .git_ignore file är filer som man vill ignorera oavsett om man pushar dem. vi behöver inga binära filer när vi jobbar med ett program vi får dem autmatiskt efter varje gång vi kompilerar programmet
 
 
+If you invoke touch hello.cpp prior to invoking make, how many files were rebuilt?
+main.cpp , main.out  
 
+You can also update a file's timestamp with the touch command, if you need or want to force any output files depending on it to be rebuilt
+
+
+Why do you think make checks the modification timestamp of the relevant files as part of deciding what to do?
+ 
+????
+
+What is the difference between an implicit rule and an explicit rule in a makefile?
+
+Explicit rules specify the instructions that MAKE must follow when it builds specific targets
+
+An implicit rule specifies a general rule for how MAKE should build files that end with specific file extensions
+
+
+What does \$* mean inside a makefile?
+
+ If you wish to use the matched text in the target itself, use the special variable $*. For instance, the following example will let you type make <name of .c file> to build an executable file with the given name:
+
+%:
+gcc -o $* $*.c
+
+> make test_executable
+
+would run:
+
+gcc -o test_executable test_executable.c
+
+------------
+
+ a translation unit is the ultimate input to a C compiler from which an object file is generated.
 
 
 
