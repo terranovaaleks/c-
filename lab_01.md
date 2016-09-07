@@ -84,14 +84,70 @@ hello\_world_.
 #### g++ compiler questions
 
 #### Where can you find the manual to g++?
+...
+  > man g++
+...
 
 ####     What is the purpose of _-Wall_ and _-g_, when passed as arguments to _g++_?
+
+         This enables all the warnings about constructions that some users consider questionable, and that are easy to avoid (or modify to prevent
+the warning), even in conjunction with macros.
+-Wall turns on the following warning flags related to C++:
+
+           -Waddress -Warray-bounds=1 (only with -O2)
+           -Wc++11-compat
+           -Wc++14-compat
+           -Wchar-subscripts
+           -Wenum-compare (in C/ObjC; this is on by default in C++)
+           -Wcomment
+           -Wmaybe-uninitialized
+           -Wnonnull
+           -Wopenmp-simd
+           -Wparentheses
+           -Wpointer-sign
+           -Wreorder
+           -Wreturn-type
+           -Wsequence-point
+           -Wsign-compare (only in C++)
+           -Wstrict-aliasing
+           -Wstrict-overflow=1
+           -Wswitch
+           -Wtrigraphs
+           -Wuninitialized
+           -Wunknown-pragmas
+           -Wunused-function
+           -Wunused-label
+           -Wunused-value
+           -Wunused-variable
+           -Wvolatile-register-var
+
+           Note that some warning flags are not implied by -Wall.  Some of them warn about constructions that users generally do not consider
+           questionable, but which occasionally you might wish to check for; others warn about constructions that are necessary or hard to avoid in
+           some cases, and there is no simple way to modify the code to suppress the warning.
+           Some of them are enabled by -Wextra but many of them must
+           be enabled individually.
 
 ####     How can you store the previous mentioned flags in a variable in the makefile?
 
 #### Find and write down 3 other arguments tp _g++_ that you think might be useful and write a short motivation why you selected these specific 3 arguments.
 
 ####   What is the difference between an object file, and an executable?
+
+An executable file is a file that can be loaded (copied) by a loader into memory and executed by the cpu.
+An object file contains machine instructions for the cpu but lack memory locations but instead uses symbols.
+
+To be able to create a executable file linking is performed. Linking is the process of collecting and combining pieces of code which could be
+object files for example where the linker replace the symbols in the object files with memory locations.
+When compiling with gcc or g++ a code written in c or c++ undergo different stages.
+
+1.) preprossesing (translate the source into ASCII intermediate file .i )
+2.) compilation  (translate .i file into ASCII assembly-language file .S)
+3.) assembly     (translate .S into binary realocatable object file .o)
+4.) linking
+
+An object file is produced by going through step 1,2,3 which means that it contains realocatable entries (symbols) which
+the step 4.) replaces with real memory locations.
+
 
 
 
