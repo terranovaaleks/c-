@@ -117,6 +117,35 @@ gcc -o test_executable test_executable.c
 
 
 
+Hello world questions:
+standard output stream - std::cout
+
+std::cerr
+
+The standard error stream is the default destination for error messages and other diagnostic warnings. Like stdout, it is usually also directed by default to the text console 
+
+
+std::clog  - use for logging
+
+
+
+-----
+why does not powerof return expected value (16) when invoking with 2 and 4?
+beacuse it is not looping  add: {}
+
+----
+Why does not adding_a_decimal output 100000?
+
+step: 0.100000001   
+
+precisionen minskar när "sum" blir större - sum får färre decimaler
+
+
+
+----------
+
+jämför olika datatyper float med double 
+input är float, 3.1415 är double
 
 
 
