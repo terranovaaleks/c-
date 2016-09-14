@@ -11,13 +11,17 @@ class complex
 
     public:
 
+    // constructors
+
     complex (); // default constructor;
-    complex (double real, double img );
+    complex (const double real,const double img );
     complex (double real);
+    complex(const complex &rhs);
 
 
     double real() const;
     double imag() const;
+
 
     complex& operator = (const complex& );
     complex& operator =(const int &);
@@ -37,11 +41,33 @@ class complex
 };
 
 
+complex:: complex(const double real,const double img ){
+    complex cplex;
+    cplex.re  =  re;
+    cplex.im = im;
 
-complex::complex(double re, double im){
-    re = re;
-    im = im;
 }
+
+
+complex:: complex(double real){
+    complex cplex;
+    cplex.re  =  real;
+    cplex.im = 0;
+
+}
+
+// osäker på den här constructor 
+complex::complex(const complex &rhs){
+    complex cplex;
+    cplex.re = rhs.re;
+    cplex.im = rhs.im;
+
+
+}
+
+
+
+
 
 
 
@@ -105,6 +131,8 @@ complex operator-(const complex& c){ // return value  -  a copy of the argument,
     copy.im = -1*copy.imag();
     return copy;
 }
+
+
 
 
 complex operator +(const complex& c1  , const complex& c2 ){
